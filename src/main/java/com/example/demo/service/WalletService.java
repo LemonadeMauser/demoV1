@@ -3,7 +3,6 @@ package com.example.demo.service;
 import com.example.demo.dto.WalletRequestDto;
 import com.example.demo.model.Wallet;
 import com.example.demo.repository.WalletRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

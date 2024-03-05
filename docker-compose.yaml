@@ -1,0 +1,28 @@
+
+version: '3.1'
+services:
+  demo1:
+    build: .
+    image: demo
+    container_name: demov1
+    ports:
+      - "8080:8080"
+    depends_on:
+      - demo-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://demo-db:5432/demo
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=19688691
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=validate
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+      - SPRING_JPA_SHOW_SQL=true
+
+  demo-db:
+    image: postgres:14-alpine
+    container_name: demoDb
+    ports:
+      - "5437:5432"
+    environment:
+      - POSTGRES_DB=demo
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=19688691
