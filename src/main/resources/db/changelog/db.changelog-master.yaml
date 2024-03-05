@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: LeMauser
+      changes:
+        - createTable:
+            tableName: wallet
+            columns:
+              - column:
+                  name: amount
+                  type: numeric(20,2)
+              - column:
+                  name: wallet_id
+                  type: bigint
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false

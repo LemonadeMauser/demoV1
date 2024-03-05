@@ -1,0 +1,1 @@
+create table wallet (amount numeric(20,2), wallet_id integer, id bigint not null, primary key (id)
